@@ -60,6 +60,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func toggleFields(x: Bool) {
+        print("toggleFields Called")
         topField.isHidden = x
         bottomField.isHidden = x
     }
