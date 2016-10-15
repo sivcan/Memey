@@ -23,15 +23,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSForegroundColorAttributeName : UIColor.white,
         NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSStrokeWidthAttributeName : CGFloat(5),
-        NSTextAlignment : center
     ] as [String : Any]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //toggleFields(x: true)
+        toggleFields(x: true)
+        
         topField.defaultTextAttributes = memeTextAttributes
         bottomField.defaultTextAttributes = memeTextAttributes
         
+        subscribeToKeyboardNotification()
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unsubscribeFromKeyboardNotifications()
     }
     
     override func viewDidLoad() {
@@ -39,12 +46,40 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIApplication.shared.statusBarStyle = .lightContent
         blurBg.isHidden = true
         cameraSelect.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        topField.textAlignment =  NSTextAlignment.center
+        bottomField.textAlignment = NSTextAlignment.center
+        
+    }
+    
+    func subscribeToKeyboardNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     func toggleFields(x: Bool) {
         topField.isHidden = x
         bottomField.isHidden = x
     }
+    
+    func keyboardWillShow(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: Notification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue{
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+
     
     @IBAction func imageSelector(_ sender: AnyObject) {
         let imagePicker = UIImagePickerController()
@@ -66,6 +101,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
+            toggleFields(x: false)  //Not working.! 
             imageView.image = image
             blurBg.isHidden = false
             blurBg.alpha = CGFloat(0.7)
@@ -74,8 +110,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }, completion: nil)
             headLabel.isHidden = true
             
-            toggleFields(x: false)
-        
         }
         self.dismiss(animated: true, completion: nil)
     }

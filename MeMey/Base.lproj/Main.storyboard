@@ -26,10 +26,8 @@
                                 <color key="textColor" red="0.93162208795547485" green="0.21638867259025574" blue="0.29843723773956299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mt6-1k-RtX">
-                                <frame key="frameInset" minX="-6" width="381" height="623"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="jkA-0q-PDa">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mt6-1k-RtX">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="jkA-0q-PDa">
                                     <frame key="frameInset"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
@@ -40,6 +38,19 @@
                                     <constraint firstAttribute="width" constant="297" id="VFs-CO-WtQ"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJh-DC-7fJ">
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="27"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rs5-qv-0pP">
+                                <frame key="frameInset" minX="63" minY="502" width="244" height="31"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="27"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5e-d7-kc5">
                                 <items>
                                     <barButtonItem systemItem="reply" id="o7J-QH-oZG">
@@ -57,32 +68,29 @@
                                 <color key="tintColor" red="0.9515003782" green="1" blue="0.9592485556" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="1" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJh-DC-7fJ">
-                                <frame key="frameInset" minX="63" minY="138" width="244" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="27"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rs5-qv-0pP">
-                                <frame key="frameInset" minX="63" minY="502" width="244" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="27"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="RVG-YK-03P" firstAttribute="top" secondItem="zJh-DC-7fJ" secondAttribute="bottom" constant="-55" id="Fnk-ME-CBc"/>
+                            <constraint firstItem="Mt6-1k-RtX" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-22" id="Iub-bE-VkC"/>
                             <constraint firstItem="A5e-d7-kc5" firstAttribute="top" secondItem="RVG-YK-03P" secondAttribute="bottom" constant="70" id="JkR-e4-Kvo"/>
+                            <constraint firstItem="Rs5-qv-0pP" firstAttribute="top" secondItem="RVG-YK-03P" secondAttribute="bottom" constant="-51" id="LPV-ww-muH"/>
+                            <constraint firstItem="Mt6-1k-RtX" firstAttribute="bottom" secondItem="A5e-d7-kc5" secondAttribute="top" id="Mwk-yk-xNn"/>
+                            <constraint firstItem="Mt6-1k-RtX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nb4-iM-8o1"/>
+                            <constraint firstAttribute="trailing" secondItem="A5e-d7-kc5" secondAttribute="trailing" id="OqV-Nh-iyG"/>
+                            <constraint firstItem="zJh-DC-7fJ" firstAttribute="centerX" secondItem="RVG-YK-03P" secondAttribute="centerX" constant="-2.5" id="R7Q-8t-Vut"/>
                             <constraint firstItem="A5e-d7-kc5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="603" id="RSL-ms-eFk"/>
                             <constraint firstAttribute="trailing" secondItem="A5e-d7-kc5" secondAttribute="trailing" id="UO8-uR-Urn"/>
+                            <constraint firstItem="Mt6-1k-RtX" firstAttribute="leading" secondItem="A5e-d7-kc5" secondAttribute="leading" id="Vfs-wm-MFI"/>
+                            <constraint firstItem="RVG-YK-03P" firstAttribute="leading" secondItem="zJh-DC-7fJ" secondAttribute="trailing" constant="-268" id="VwA-a7-oaF"/>
                             <constraint firstItem="A5e-d7-kc5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="afJ-PD-uUi"/>
+                            <constraint firstItem="A5e-d7-kc5" firstAttribute="top" secondItem="Mt6-1k-RtX" secondAttribute="bottom" id="bOc-wH-WAj"/>
+                            <constraint firstItem="Rs5-qv-0pP" firstAttribute="centerX" secondItem="RVG-YK-03P" secondAttribute="centerX" constant="-2.5" id="fUM-eF-8dA"/>
+                            <constraint firstItem="A5e-d7-kc5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gWf-TV-ere"/>
                             <constraint firstItem="RVG-YK-03P" firstAttribute="centerX" secondItem="A5e-d7-kc5" secondAttribute="centerX" id="gcM-PR-HoT"/>
                             <constraint firstItem="RVG-YK-03P" firstAttribute="centerX" secondItem="Xhi-Mt-3MX" secondAttribute="centerX" id="hqF-X4-bBG"/>
                             <constraint firstItem="RVG-YK-03P" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kRL-xo-lZ6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A5e-d7-kc5" secondAttribute="bottom" id="q2J-ds-sVe"/>
                             <constraint firstItem="RVG-YK-03P" firstAttribute="centerY" secondItem="Xhi-Mt-3MX" secondAttribute="centerY" id="snm-92-kpT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A5e-d7-kc5" secondAttribute="bottom" id="x4d-Nz-4NY"/>
                         </constraints>
