@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2327e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MeMey" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +17,92 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MTMxOTU2MjU3Nzk5Mzc4MTk0" translatesAutoresizingMaskIntoConstraints="NO" id="Xhi-Mt-3MX"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MeMey!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwY-h5-Q9F">
+                                <frame key="frameInset" minX="92" minY="30" width="184" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="40"/>
+                                <color key="textColor" red="0.93162208795547485" green="0.21638867259025574" blue="0.29843723773956299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mt6-1k-RtX">
+                                <frame key="frameInset" minX="-6" width="381" height="623"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="jkA-0q-PDa">
+                                    <frame key="frameInset"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RVG-YK-03P">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="297" id="VFs-CO-WtQ"/>
+                                </constraints>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5e-d7-kc5">
+                                <items>
+                                    <barButtonItem systemItem="reply" id="o7J-QH-oZG">
+                                        <connections>
+                                            <action selector="imageSelector:" destination="BYZ-38-t0r" id="JkN-3j-OY5"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="282" style="plain" systemItem="fixedSpace" id="G7m-GH-NGJ"/>
+                                    <barButtonItem tag="1" systemItem="camera" id="Rr9-cy-6Lg">
+                                        <connections>
+                                            <action selector="imageSelector:" destination="BYZ-38-t0r" id="C2z-qg-gbZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="0.9515003782" green="1" blue="0.9592485556" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="1" green="0.0" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJh-DC-7fJ">
+                                <frame key="frameInset" minX="63" minY="138" width="244" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="27"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rs5-qv-0pP">
+                                <frame key="frameInset" minX="63" minY="502" width="244" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="27"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="A5e-d7-kc5" firstAttribute="top" secondItem="RVG-YK-03P" secondAttribute="bottom" constant="70" id="JkR-e4-Kvo"/>
+                            <constraint firstItem="A5e-d7-kc5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="603" id="RSL-ms-eFk"/>
+                            <constraint firstAttribute="trailing" secondItem="A5e-d7-kc5" secondAttribute="trailing" id="UO8-uR-Urn"/>
+                            <constraint firstItem="A5e-d7-kc5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="afJ-PD-uUi"/>
+                            <constraint firstItem="RVG-YK-03P" firstAttribute="centerX" secondItem="A5e-d7-kc5" secondAttribute="centerX" id="gcM-PR-HoT"/>
+                            <constraint firstItem="RVG-YK-03P" firstAttribute="centerX" secondItem="Xhi-Mt-3MX" secondAttribute="centerX" id="hqF-X4-bBG"/>
+                            <constraint firstItem="RVG-YK-03P" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kRL-xo-lZ6"/>
+                            <constraint firstItem="RVG-YK-03P" firstAttribute="centerY" secondItem="Xhi-Mt-3MX" secondAttribute="centerY" id="snm-92-kpT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="A5e-d7-kc5" secondAttribute="bottom" id="x4d-Nz-4NY"/>
+                        </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="blurBg" destination="Mt6-1k-RtX" id="m6H-p5-f7j"/>
+                        <outlet property="bottomField" destination="Rs5-qv-0pP" id="u69-Sf-baN"/>
+                        <outlet property="cameraSelect" destination="Rr9-cy-6Lg" id="DJz-CP-rUS"/>
+                        <outlet property="headLabel" destination="MwY-h5-Q9F" id="bFW-WV-fxq"/>
+                        <outlet property="imageView" destination="RVG-YK-03P" id="WTc-Ym-mI4"/>
+                        <outlet property="topField" destination="zJh-DC-7fJ" id="jEY-g3-wvo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MTMxOTU2MjU3Nzk5Mzc4MTk0" width="621" height="1104"/>
+    </resources>
 </document>
